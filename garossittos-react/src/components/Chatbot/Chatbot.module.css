@@ -1,0 +1,147 @@
+.panel {
+  position: fixed;
+  right: 22px;
+  bottom: 172px;
+  z-index: 85;
+  width: 340px;
+  max-width: calc(100vw - 32px);
+  max-height: min(560px, 70vh);
+  background: var(--hueso);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(59, 42, 32, 0.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(16px) scale(0.97);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.22s ease,
+    opacity 0.22s ease;
+}
+.panel.abierto {
+  transform: none;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.head {
+  background: var(--verde-hoja);
+  color: #fff;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.head img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+.titulo {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.estado {
+  font-size: 0.72rem;
+  opacity: 0.85;
+}
+.cerrar {
+  margin-left: auto;
+  background: rgba(255, 255, 255, 0.18);
+  border: none;
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--crema-masa-suave);
+}
+.msg {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.87rem;
+  line-height: 1.45;
+}
+.msgBot {
+  background: #fff;
+  border-bottom-left-radius: 4px;
+  align-self: flex-start;
+  box-shadow: 0 2px 8px rgba(59, 42, 32, 0.08);
+}
+.msgUser {
+  background: var(--verde-hoja);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+  align-self: flex-end;
+}
+
+.opciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 16px 14px;
+  background: var(--crema-masa-suave);
+}
+.chip {
+  background: #fff;
+  border: 1.5px solid var(--dorado);
+  color: var(--verde-hoja-oscuro);
+  padding: 8px 14px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.chip:hover {
+  background: var(--dorado-suave);
+}
+
+.carrito {
+  background: #fff;
+  border-top: 1px solid rgba(59, 42, 32, 0.08);
+  padding: 12px 16px;
+  font-size: 0.82rem;
+}
+.carrito ul {
+  margin: 6px 0 10px;
+  padding-left: 18px;
+  color: var(--tinta-suave);
+}
+.carrito a.btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.fabChat {
+  position: fixed;
+  right: 22px;
+  bottom: 96px;
+  z-index: 80;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(59, 42, 32, 0.32);
+  cursor: pointer;
+  border: none;
+  background: var(--arcilla);
+}

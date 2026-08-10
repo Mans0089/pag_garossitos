@@ -1,0 +1,44 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 20px;
+}
+
+.card {
+  background: var(--hueso);
+  border-radius: var(--radio);
+  padding: 26px 22px;
+  box-shadow: var(--sombra);
+}
+.card h4 {
+  font-size: 1.02rem;
+  margin-bottom: 0.4rem;
+}
+.card p {
+  font-size: 0.88rem;
+  color: var(--tinta-suave);
+  margin: 0;
+}
+
+.selloMini {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--verde-hoja);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

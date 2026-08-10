@@ -1,0 +1,127 @@
+.hero {
+  padding: 70px 0 40px;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.titulo {
+  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+}
+
+.lead {
+  font-size: 1.12rem;
+  color: var(--tinta-suave);
+  max-width: 46ch;
+  margin-bottom: 1.8rem;
+}
+
+.cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 2.2rem;
+}
+
+.badges {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.num {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--arcilla);
+}
+.txt {
+  font-size: 0.8rem;
+  color: var(--tinta-suave);
+  line-height: 1.25;
+  max-width: 12ch;
+}
+
+.collage {
+  position: relative;
+  height: 460px;
+}
+.collage img {
+  position: absolute;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: var(--sombra);
+  border: 6px solid var(--hueso);
+}
+.hc1 {
+  width: 62%;
+  height: 65%;
+  top: 0;
+  left: 6%;
+  transform: rotate(-4deg);
+  z-index: 2;
+}
+.hc2 {
+  width: 48%;
+  height: 46%;
+  bottom: 0;
+  right: 0;
+  transform: rotate(5deg);
+  z-index: 3;
+}
+.hc3 {
+  width: 38%;
+  height: 34%;
+  top: 6%;
+  right: 2%;
+  transform: rotate(-3deg);
+  z-index: 4;
+}
+
+.sello {
+  position: absolute;
+  bottom: 22%;
+  left: -6%;
+  z-index: 5;
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  background: var(--arcilla);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.15;
+  box-shadow: var(--sombra);
+  border: 3px dashed var(--dorado-suave);
+  transform: rotate(-8deg);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .collage {
+    height: 340px;
+    margin-top: 20px;
+  }
+  .sello {
+    width: 92px;
+    height: 92px;
+    font-size: 0.85rem;
+    left: 0;
+  }
+}

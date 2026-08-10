@@ -1,0 +1,156 @@
+.catalogo {
+  background: var(--crema-masa-suave);
+}
+
+.intro {
+  color: var(--tinta-suave);
+  max-width: 60ch;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 30px 0 40px;
+}
+.tab {
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: var(--hueso);
+  border: 2px solid transparent;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  color: var(--tinta);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tab:hover {
+  border-color: var(--dorado);
+}
+.tabActivo {
+  background: var(--verde-hoja);
+  color: #fff;
+  box-shadow: var(--sombra);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 620px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.prodCard {
+  background: var(--hueso);
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+.prodCard:hover {
+  transform: translateY(-5px);
+}
+
+.prodImg {
+  height: 190px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--dorado-suave), var(--verde-hoja-suave));
+}
+.prodImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.prodCard:hover .prodImg img {
+  transform: scale(1.06);
+}
+.sinFoto {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.catChip {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(59, 42, 32, 0.72);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 100px;
+}
+
+.prodBody {
+  padding: 20px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.prodBody h4 {
+  font-size: 1.12rem;
+  margin-bottom: 0.35rem;
+}
+.variantes {
+  font-size: 0.82rem;
+  color: var(--tinta-suave);
+  margin-bottom: 0.6rem;
+}
+.nota {
+  font-size: 0.84rem;
+  color: var(--tinta-suave);
+  margin-bottom: 0.9rem;
+  flex: 1;
+}
+
+.precioLinea {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.precio {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--arcilla);
+}
+.precio .gramaje {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.72rem;
+  color: var(--tinta-suave);
+  display: block;
+}
+.cotizar {
+  font-size: 0.92rem;
+  color: var(--verde-hoja);
+}
+
+.prodBody a.btn {
+  width: 100%;
+  justify-content: center;
+}

@@ -1,0 +1,125 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(243, 231, 204, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(59, 42, 32, 0.08);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.marca img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--sombra);
+}
+
+.marcaTexto {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--verde-hoja-oscuro);
+}
+.marcaTexto small {
+  display: block;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  color: var(--arcilla);
+  text-transform: uppercase;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.navLinks a {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--tinta);
+  position: relative;
+  padding: 4px 0;
+}
+.navLinks a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--arcilla);
+  transition: width 0.2s ease;
+}
+.navLinks a:hover::after {
+  width: 100%;
+}
+
+.navCta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hamburguesa {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.hamburguesa span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--tinta);
+  margin: 5px 0;
+  border-radius: 2px;
+}
+
+@media (max-width: 860px) {
+  .navLinks {
+    position: fixed;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: var(--hueso);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-bottom: 1px solid rgba(59, 42, 32, 0.08);
+  }
+  .navLinks.abierto {
+    max-height: 340px;
+  }
+  .navLinks a {
+    width: 100%;
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(59, 42, 32, 0.06);
+  }
+  .hamburguesa {
+    display: block;
+  }
+  .navCta span {
+    display: none;
+  }
+}

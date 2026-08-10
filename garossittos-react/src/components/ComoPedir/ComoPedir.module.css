@@ -1,0 +1,44 @@
+.pasos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.card {
+  position: relative;
+  background: var(--hueso);
+  border-radius: var(--radio);
+  padding: 30px 22px 24px;
+  box-shadow: var(--sombra);
+}
+.card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+.card p {
+  font-size: 0.86rem;
+  color: var(--tinta-suave);
+  margin: 0;
+}
+
+.num {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--dorado);
+  -webkit-text-stroke: 1.4px var(--arcilla);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 900px) {
+  .pasos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .pasos {
+    grid-template-columns: 1fr;
+  }
+}

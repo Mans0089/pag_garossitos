@@ -1,0 +1,66 @@
+.historia {
+  background: var(--verde-hoja-suave);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.parrafo {
+  color: var(--tinta-suave);
+  margin-bottom: 1rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 34px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: repeating-linear-gradient(to bottom, var(--arcilla) 0 6px, transparent 6px 12px);
+}
+
+.item {
+  position: relative;
+  padding-bottom: 34px;
+}
+.item:last-child {
+  padding-bottom: 0;
+}
+.item::before {
+  content: "";
+  position: absolute;
+  left: -34px;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--arcilla);
+  border: 3px solid var(--hueso);
+  box-shadow: 0 0 0 2px var(--arcilla);
+}
+
+.anio {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  color: var(--arcilla);
+  font-size: 1.05rem;
+}
+.item p {
+  margin: 0.3rem 0 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
