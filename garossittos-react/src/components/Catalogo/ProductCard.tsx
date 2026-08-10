@@ -22,7 +22,7 @@ export default function ProductCard({ producto }: { producto: Producto }) {
         <span className={styles.gramaje}>{producto.gramaje || ""}</span>
       </div>
     );
-    mensajePedido = `¡Hola Garossittos! 😊 Quiero pedir: ${producto.nombre} (${formatoCOP(producto.precio)}).`;
+    mensajePedido = `¡Hola Garossittos! Quiero pedir: ${producto.nombre} (${formatoCOP(producto.precio)}).`;
   } else if (producto.precioDesde) {
     precioHtml = (
       <div className={styles.precio}>
@@ -30,12 +30,12 @@ export default function ProductCard({ producto }: { producto: Producto }) {
         <span className={styles.gramaje}>{producto.gramajeDesde || ""}</span>
       </div>
     );
-    mensajePedido = `¡Hola Garossittos! 😊 Quiero pedir: ${producto.nombre} (desde ${formatoCOP(
+    mensajePedido = `¡Hola Garossittos! Quiero pedir: ${producto.nombre} (desde ${formatoCOP(
       producto.precioDesde,
     )}). ¿Me confirman precio según tamaño?`;
   } else {
     precioHtml = <div className={`${styles.precio} ${styles.cotizar}`}>Precio bajo pedido</div>;
-    mensajePedido = `¡Hola Garossittos! 😊 Quisiera cotizar: ${producto.nombre}.`;
+    mensajePedido = `¡Hola Garossittos! Quisiera cotizar: ${producto.nombre}.`;
   }
 
   return (

@@ -42,37 +42,37 @@ export default function Chatbot() {
 
   function mostrarMenuPrincipal(saludo: boolean) {
     if (saludo) {
-      agregarMensaje(`¡Hola! Soy el asistente de ${NEGOCIO.nombre} 🧑‍🍳. ¿En qué te ayudo hoy?`, "bot");
+      agregarMensaje(`¡Hola! Soy el asistente de ${NEGOCIO.nombre}. ¿En qué te ayudo hoy?`, "bot");
     }
     setOpciones([
-      { texto: "🫔 Armar mi pedido", accion: iniciarArmadoPedido },
+      { texto: "Armar mi pedido", accion: iniciarArmadoPedido },
       {
-        texto: "🕒 Tiempos de entrega",
+        texto: "Tiempos de entrega",
         accion: () =>
           responder(
             "Trabajamos por encargo: entre más anticipación nos des, mejor te podemos cumplir. Al confirmar tu pedido por WhatsApp te decimos la fecha exacta disponible según cantidad.",
           ),
       },
       {
-        texto: "❄️ ¿Cómo se conservan?",
+        texto: "¿Cómo se conservan?",
         accion: () =>
           responder(
             "Nuestros productos son perecederos y artesanales: te recomendamos guardarlos en refrigeración y consumirlos frescos. Cada producto mantiene cadena de frío hasta la entrega.",
           ),
       },
       {
-        texto: "💳 Formas de pago",
+        texto: "Formas de pago",
         accion: () =>
           responder("Coordinamos la forma de pago directamente por WhatsApp (efectivo o transferencia), según lo que te quede más fácil."),
       },
       {
-        texto: "📍 Zona de entrega",
+        texto: "Zona de entrega",
         accion: () =>
           responder(
             "Elaboramos en Paipa, Boyacá. Cuéntanos tu ciudad o barrio por WhatsApp y te confirmamos si hacemos entrega o coordinamos un punto de recogida.",
           ),
       },
-      { texto: "💬 Hablar con una persona", accion: irAWhatsApp },
+      { texto: "Hablar con una persona", accion: irAWhatsApp },
     ]);
   }
 
@@ -85,7 +85,7 @@ export default function Chatbot() {
   }
 
   function irAWhatsApp() {
-    agregarMensaje("¡Con gusto! Te paso directo con nosotros por WhatsApp 👇", "bot");
+    agregarMensaje("¡Con gusto! Te paso directo con nosotros por WhatsApp.", "bot");
     setTimeout(() => window.open(linkWhatsApp(NEGOCIO.mensajeGenerico), "_blank"), 400);
     setTimeout(() => {
       agregarMensaje("¿Necesitas algo más mientras tanto?", "bot");
@@ -97,10 +97,10 @@ export default function Chatbot() {
     agregarMensaje("Perfecto, ¿qué categoría te antoja hoy?", "bot");
     setOpciones([
       ...CATEGORIAS.map((cat) => ({
-        texto: `${iconoCategoria(cat)} ${ETIQUETAS_CATEGORIA[cat]}`,
+        texto: ETIQUETAS_CATEGORIA[cat],
         accion: () => mostrarProductosChat(cat),
       })),
-      { texto: "⬅️ Volver", accion: () => mostrarMenuPrincipal(false) },
+      { texto: "Volver", accion: () => mostrarMenuPrincipal(false) },
     ]);
   }
 
@@ -114,7 +114,7 @@ export default function Chatbot() {
           (p.precio ? ` — ${formatoCOP(p.precio)}` : p.precioDesde ? ` — desde ${formatoCOP(p.precioDesde)}` : " — a cotizar"),
         accion: () => agregarAlPedido(p),
       })),
-      { texto: "⬅️ Otra categoría", accion: iniciarArmadoPedido },
+      { texto: "Otra categoría", accion: iniciarArmadoPedido },
     ]);
   }
 
@@ -122,21 +122,17 @@ export default function Chatbot() {
     setPedido((prev) => [...prev, p]);
     agregarMensaje(`Agregué "${p.nombre}" a tu pedido. ¿Quieres añadir algo más?`, "bot");
     setOpciones([
-      { texto: "➕ Seguir agregando", accion: iniciarArmadoPedido },
-      { texto: "✅ Ya terminé, enviar pedido", accion: finalizarPedido },
+      { texto: "Seguir agregando", accion: iniciarArmadoPedido },
+      { texto: "Ya terminé, enviar pedido", accion: finalizarPedido },
     ]);
   }
 
   function finalizarPedido() {
     agregarMensaje(
-      "¡Listo! Ya tienes tu pedido armado. Toca el botón de abajo para enviármelo por WhatsApp y coordinamos el resto 🎉",
+      "¡Listo! Ya tienes tu pedido armado. Toca el botón de abajo para enviármelo por WhatsApp y coordinamos el resto.",
       "bot",
     );
-    setOpciones([{ texto: "⬅️ Menú principal", accion: () => mostrarMenuPrincipal(false) }]);
-  }
-
-  function iconoCategoria(cat: Categoria) {
-    return { tamales: "🫔", envueltos: "🌿", tortas: "🎂", kumis: "🥤", postres: "🍰" }[cat];
+    setOpciones([{ texto: "Menú principal", accion: () => mostrarMenuPrincipal(false) }]);
   }
 
   function alternarChat() {
@@ -152,7 +148,7 @@ export default function Chatbot() {
     const texto =
       `${NEGOCIO.mensajeGenerico}\n\nEsto es lo que quiero:\n` +
       pedido.map((p) => `- ${p.nombre}`).join("\n") +
-      `\n\n¿Me confirman precio total y fecha de entrega? 🙏`;
+      `\n\n¿Me confirman precio total y fecha de entrega?`;
     return linkWhatsApp(texto);
   })();
 
@@ -163,7 +159,7 @@ export default function Chatbot() {
           <img src="/assets/images/logo-garossittos.png" alt="" />
           <div>
             <div className={styles.titulo}>Asistente Garossittos</div>
-            <div className={styles.estado}>🟢 Responde al instante</div>
+            <div className={styles.estado}>Responde al instante</div>
           </div>
           <button className={styles.cerrar} onClick={() => setAbierto(false)} aria-label="Cerrar asistente">
             ✕

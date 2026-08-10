@@ -9,11 +9,11 @@ type Filtro = Categoria | "todos";
 
 const TABS: { valor: Filtro; texto: string }[] = [
   { valor: "todos", texto: "Todos" },
-  { valor: "tamales", texto: "🫔 Tamales" },
-  { valor: "envueltos", texto: "🌿 Envueltos" },
-  { valor: "tortas", texto: "🎂 Tortas" },
-  { valor: "kumis", texto: "🥤 Kumis · Yogurt" },
-  { valor: "postres", texto: "🍰 Postres" },
+  { valor: "tamales", texto: "Tamales" },
+  { valor: "envueltos", texto: "Envueltos" },
+  { valor: "tortas", texto: "Tortas" },
+  { valor: "kumis", texto: "Kumis · Yogurt" },
+  { valor: "postres", texto: "Postres" },
 ];
 
 export default function Catalogo() {

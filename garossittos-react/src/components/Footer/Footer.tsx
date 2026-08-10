@@ -17,11 +17,11 @@ export default function Footer() {
             <h5>Contacto</h5>
             <div className={styles.links}>
               <a href={linkWhatsApp(NEGOCIO.mensajeGenerico)} target="_blank" rel="noopener noreferrer">
-                📱 311 531 3640 (WhatsApp)
+                311 531 3640 (WhatsApp)
               </a>
-              <a href={`tel:+${NEGOCIO.telefonosSecundarios[0]}`}>📞 320 835 5430</a>
-              <a href={`tel:+${NEGOCIO.telefonosSecundarios[1]}`}>📞 317 519 0627</a>
-              <span>📍 {NEGOCIO.ubicacion}</span>
+              <a href={`tel:+${NEGOCIO.telefonosSecundarios[0]}`}>320 835 5430</a>
+              <a href={`tel:+${NEGOCIO.telefonosSecundarios[1]}`}>317 519 0627</a>
+              <span>{NEGOCIO.ubicacion}</span>
             </div>
           </div>
           <div>

@@ -7,7 +7,7 @@ export const NEGOCIO = {
   nombre: "Garossittos",
   telefonoPrincipal: "573115313640",
   telefonosSecundarios: ["573208355430", "573175190627"],
-  mensajeGenerico: "¡Hola Garossittos! 😊 Quisiera hacer un pedido.",
+  mensajeGenerico: "¡Hola Garossittos! Quisiera hacer un pedido.",
   ubicacion: "Paipa, Boyacá — entregas y encargos a coordinar",
 };
 
